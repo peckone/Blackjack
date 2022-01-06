@@ -25,12 +25,6 @@ class test_cases {
 		players.add(new playerProfile("Greg"));
 	}
 	
-	// CHECKS PLAYERS NAME IS RECALLED CORRECTLY WITH 'GETNAME()' METHOD IN 'PLAYERPROFILE' CLASS
-	@Test
-    public void nameTest(){
-        assertEquals(players.get(0).getName(), "Greg");
-    }
-	
 	// CHECKS PLAYER HAS 2 CARDS WHEN 'DEAL()' IS CALLED TO COMMENCE GAME.
 	// 'DEAL()' DEALS CARDS TO ALL PLAYERS AT THE BEGINNING OF THE GAME;
 	// CHECKING THE 'SIZE()' OF THE 'THAND' ARRAYLIST TELLS YOU HOW MANY 'CARDS' IT HOLDS
@@ -97,12 +91,11 @@ class test_cases {
  * THE SECOND DOES THE SAME BUT COUNTS ACES AS 11.
  */
 	
-	// CHECKS IF A KING AND AN ACE EQUATE TO 21 (AND IF 'GETHASACE()' RETURNS THE STORED INT VALUE 10 WHEN PLAYER HAS 1 IN THIER HAND)
+	// CHECKS IF A KING AND AN ACE EQUATE TO 21
 	@Test
 	void test6() {
 		players.get(0).setHand("King", 10);
 		players.get(0).setHand("Ace", 1);
-		assertEquals(players.get(0).getHasAce(), 10);
 		assertEquals(players.get(0).getHandVal(), 21);
 	}
 	

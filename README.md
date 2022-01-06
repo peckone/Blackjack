@@ -1,6 +1,7 @@
 ## Blackjack Tech Test
 
-This solution is completed using Java and runs on version 11 or higher.
+This solution is completed using Java openjdk 11.0.13 on Linux. Test cases were completed using JUnit 5.
+
 It simlautes a full game (minus a number of player options depending on cards) where multiple players
 can play a hand, including the dealer, a winner is declared and you are asked if you wish to play again.
 *** Rules vary from country to country, and from casino to casino. This game does not copy any single rule book. ***
@@ -22,7 +23,8 @@ and the highest is declared the winner. You then have the choice to play again.
 
 
 In 'blackjack > src > test' is a file 'test_cases.java' which includes all 8 scenarios outlines in the
-provided guidance. As well as a few additional tests to cover various other methods in the class files.
+provided guidance. As well as 'test_casesAdd.java' which contains a few additional tests to cover various
+other methods in the class files.
 
 
 Briefly, the solution's 'main1' file instantiates the card deck object from 'deck' class, then calls a series of 

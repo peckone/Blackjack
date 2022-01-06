@@ -133,24 +133,52 @@ public class actions {
     // NAME AS THE WINNER. USES 'HANDVAL' AND A COMBINED 'HANDVAL' & 'HASACE' DEPENDING ON AN ACE BEING PRESENT. 
     // (NEEDS ALTERED TO RETURN MUTIPLE WINNERS IF DEALER DOES NOT GET BLACKJACK!)
     public static String whoWon(ArrayList<playerProfile> players) {
-        int winnerValue = 0;
-        String winnerName = "No one";
-        for (playerProfile player : players){
-        	
-        	Integer handPLUSace = player.getHandVal() + player.getHasAce();
-        	
-        	if (player.getHandVal() > winnerValue && player.getHandVal() < 22 && (handPLUSace > 21 || player.getHasAce() == 0)){
-                winnerValue = player.getHandVal();
-                winnerName = player.getName();
-            }
-            else if (handPLUSace > winnerValue && (handPLUSace == 21 || handPLUSace < 22)){
-                winnerValue = handPLUSace;
-                winnerName = player.getName();
-            }
-            System.out.println("current winner = " + winnerName);
-            System.out.println("current high score = " + winnerValue);
-        }
-        return winnerName;
-    }
+    	int winnerValue = 0;
+    	String winnerName = "No one";
+    	
+    	if (players.get(players.size()-1).getHandVal() == 21 && players.get(players.size()-1).getHand().size() == 2) {
+    		return "no one. Dealer has Blackjack!";
+    	}
+    	
+    	for (playerProfile player : players){
+    		
+    		Integer handPLUSace = player.getHandVal() + player.getHasAce();
+    		
+    		if (player.getHandVal() > winnerValue && player.getHandVal() < 22 && (handPLUSace > 21 || player.getHasAce() == 0)){
+    	        winnerValue = player.getHandVal();
+    	        winnerName = player.getName();
+    	    }
+    	    else if (handPLUSace > winnerValue && (handPLUSace == 21 || handPLUSace < 22)){
+    	        winnerValue = handPLUSace;
+    	        winnerName = player.getName();
+    	    }
+    	    System.out.println("current winner = " + winnerName);
+    	    System.out.println("current high score = " + winnerValue);
+    	}
+    	return winnerName;
+    	}
    
 }
+
+/*
+public static String whoWon(ArrayList<playerProfile> players) {
+int winnerValue = 0;
+String winnerName = "No one";
+for (playerProfile player : players){
+	
+	Integer handPLUSace = player.getHandVal() + player.getHasAce();
+	
+	if (player.getHandVal() > winnerValue && player.getHandVal() < 22 && (handPLUSace > 21 || player.getHasAce() == 0)){
+        winnerValue = player.getHandVal();
+        winnerName = player.getName();
+    }
+    else if (handPLUSace > winnerValue && (handPLUSace == 21 || handPLUSace < 22)){
+        winnerValue = handPLUSace;
+        winnerName = player.getName();
+    }
+    System.out.println("current winner = " + winnerName);
+    System.out.println("current high score = " + winnerValue);
+}
+return winnerName;
+}
+*/

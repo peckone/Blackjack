@@ -21,7 +21,7 @@ public class main1{
         actions.deal(cards, cardVals, players);
         actions.playTheGame(players, cards, cardVals, scanObj);
         System.out.println("\n\nAnd the winner is........"+ actions.whoWon(players));
-
+        
         // ASK TO PLAY AGAIN. RE-RUNS MAIN FUNCTIONS IF SO, SAYS GOODBYE IF NOT
         System.out.print("\nDo you want to play again? ('y' for YES, 'n' for NO) : ");
         scanObj.nextLine();
