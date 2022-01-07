@@ -31,7 +31,7 @@ public class main1{
         System.out.println(actions.whoWon(winner));							// CHECKS 'WINNER' LIST TO FIND NAME(S) OF WINNING PLAYER
      
         // ASK TO PLAY AGAIN. RE-RUNS MAIN FUNCTIONS IF SO, SAYS GOODBYE IF NOT
-        System.out.print("\nDo you want to play again? ('y' for YES, 'n' for NO) : ");
+        System.out.print("\nDo you want to play again? ('y' for YES, any other key for NO) : ");
         scanObj.nextLine();
         String again = scanObj.nextLine();
         if(again.equalsIgnoreCase("y")){

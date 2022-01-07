@@ -1,6 +1,7 @@
 package gameFiles;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -27,17 +28,27 @@ public class actions {
 	
 	// ASKS NUMBER OF PLAYERS, REQUESTS NAMES AND RETURNS ARRAYLIST OF 'PLAYERPROFILE' OBJECTS PER PLAYER
 	public static ArrayList<playerProfile> establishGame(Scanner scanObj, ArrayList<playerProfile> players){
-	    System.out.print("Welcome to the Blackjack table. How many players are there : ");
-		int num_of_players = scanObj.nextInt();
-	    System.out.println("OK, we have " + num_of_players + " players!");
+		int num_of_players = 0;
+		boolean number = false;
+		while(!number) {								// MAKES SURE A NUMBER IS INPUT
+			try {
+				System.out.print("Welcome to the Blackjack table. How many players are there : ");	// ASKS FOR NUMBER OF PLAYERS 
+		    	num_of_players = scanObj.nextInt(); 
+		    	number = true;
+		        System.out.println("OK, we have " + num_of_players + " players!");
+			} catch(InputMismatchException ime) {		// THROWS ERROR IS INPUT IS NOT AN INT
+				System.out.println("That is not a number.");
+				scanObj.nextLine();
+			}
+		}
 	    int i = 1;
-	    while (i <= num_of_players){
+	    while (i <= num_of_players){					// ASKS NAMES FOR THE NUMBER OF PLAYERS INPUT
 	        System.out.print("Player " + i + ", what is your name : ");
 	        String name = scanObj.next();
-	        players.add(new playerProfile(name));
+	        players.add(new playerProfile(name));		// CREATES PLAYER OBJECTS FOR EACH NAME
 	        i++;
 	    }
-	    players.add(new playerProfile("Dealer"));
+	    players.add(new playerProfile("Dealer"));		// ADD DEALER AS PLAYER LAST
 	    return players;
 	}
 
