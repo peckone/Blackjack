@@ -3,9 +3,14 @@
 This solution is completed using Java openjdk 11.0.13 on Linux. Test cases were completed using JUnit 5.
 Solution can be ran on Eclipse IDE
 
+*** Rules vary from country to country, and from casino to casino. This game does not copy any single rule book ***
+It simply allows multiple players to play a hand in turn where the player, or players, who get Blackjack
+(21 from 2 cards) win the game, or the next highest of 21 from 3+ cards, then any highest value from 20 down.
+If the dealer socres highest or joint highest, no one wins. Though in real life anyone matching that hand
+would get thier stake back.
+
 It simulates a full game (minus a number of player options depending on cards) where multiple players
 can play a hand, including the dealer, a winner is declared and you are asked if you wish to play again.
-*** Rules vary from country to country, and from casino to casino. This game does not copy any single rule book. ***
 
 Once the repository has been cloned, the 4no. class files can be found in 'blackjack > src > gameFiles'.
 Opening and running 'main1.java' will begin the game.
