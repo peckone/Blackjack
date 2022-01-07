@@ -3,11 +3,13 @@ package test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import blackjack.actions;
-import blackjack.deck;
-import blackjack.playerProfile;
+
+import gameFiles.actions;
+import gameFiles.deck;
+import gameFiles.playerProfile;
 
 class test_cases {
 	
@@ -15,6 +17,7 @@ class test_cases {
 	ArrayList<playerProfile> players = new ArrayList<playerProfile>();
     ArrayList<String> cards = new ArrayList<String>();
     ArrayList<Integer> cardVals = new ArrayList<Integer>();
+    ArrayList<playerProfile> winner = new ArrayList<playerProfile>();
 	
 	// ASSIGN VARIABLES WITH THE OBJECTS REQUIRED FOR THE CASES;
 	// CARDS, CARD VALUES AND A SINGLE NAME FOR PLAYER LIST TO TEST THIER HAND
@@ -56,7 +59,7 @@ class test_cases {
 	void test3() {
 		actions.deal(cards, cardVals, players);
 		Integer score1 = players.get(0).getHandVal();
-		actions.stand(players.get(0));
+		actions.stand(players.get(0), winner);
 		Integer score2 = players.get(0).getHandVal();
 		assertEquals(players.get(0).getHand().size(), 2);
 		assertTrue(score2 == score1);

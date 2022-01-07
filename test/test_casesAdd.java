@@ -5,8 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import blackjack.deck;
-import blackjack.playerProfile;
+
+import gameFiles.deck;
+import gameFiles.playerProfile;
 
 class test_casesAdd {
 	
