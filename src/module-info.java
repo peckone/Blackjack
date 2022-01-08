@@ -1,4 +1,3 @@
-module blackjack {
+module Blackjack {
 	requires org.junit.jupiter.api;
-	requires junit;
 }
